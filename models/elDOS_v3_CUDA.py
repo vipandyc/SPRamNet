@@ -116,6 +116,7 @@ train_loss_record = np.zeros(num_epochs)
 valid_loss_record = np.zeros(num_epochs)
 
 for epoch in range(num_epochs):
+    model.train()
     for inputs, targets in train_loader:
         inputs, targets = inputs.to(device), targets.to(device)
         optimizer.zero_grad()
